@@ -28,10 +28,11 @@ main {
 .wrapper {
   display: flex;
   justify-content: space-between;
+  padding: 10px;
 }
 
 .wrapper .product {
-  width: 68%;
+  width: 70%;
 }
 
 .wrapper .filter {
