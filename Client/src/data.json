@@ -5,7 +5,7 @@
         "imageurl": "/images/product1.jpg",
         "dest": "This is Product 1",
         "price": 30,
-        "sizes": ["s","m"]
+        "sizes": ["S","M"]
     },
 
     {
@@ -14,7 +14,7 @@
         "imageurl": "/images/product2.jpg",
         "dest": "This is Product 2",
         "price": 50,
-        "sizes": ["s","m"]
+        "sizes": ["L","XL"]
     },
 
     {
@@ -23,7 +23,7 @@
         "imageurl": "/images/product3.jpg",
         "dest": "This is Product 3",
         "price": 100,
-        "sizes": ["s","m"]
+        "sizes": ["M","XS"]
     },
 
     {
@@ -32,6 +32,6 @@
         "imageurl": "/images/product4.jpg",
         "dest": "This is Product 4",
         "price": 40,
-        "sizes": ["s","m"]
+        "sizes": ["S","XS"]
     }
 ]
