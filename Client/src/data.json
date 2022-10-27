@@ -1,6 +1,6 @@
 [
     {
-        "id": "id1",
+        "id": "1",
         "title": "computer",
         "imageurl": "/images/product1.jpg",
         "dest": "This is Product 1",
@@ -9,7 +9,7 @@
     },
 
     {
-        "id": "id2",
+        "id": "2",
         "title": "Mobile",
         "imageurl": "/images/product2.jpg",
         "dest": "This is Product 2",
@@ -18,7 +18,7 @@
     },
 
     {
-        "id": "id3",
+        "id": "3",
         "title": "LabTop",
         "imageurl": "/images/product3.jpg",
         "dest": "This is Product 3",
@@ -27,7 +27,7 @@
     },
 
     {
-        "id": "id4",
+        "id": "4",
         "title": "Tab",
         "imageurl": "/images/product4.jpg",
         "dest": "This is Product 4",
