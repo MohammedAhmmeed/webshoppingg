@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "../../css/Products/Products.css"
 import ProductModal from './ProductModal';
+import Bounce from 'react-reveal'
 
  function Products(props) {
   const [product, setproduct] = useState(""); 
@@ -14,7 +15,7 @@ const closeModal = (product) => {
 }
 
   return (
-    
+    <Bounce left cascade>
       <div className="products-wrapper">{props.products.map(product => (
          
           <div className="product-item" key={product.id}>
@@ -31,6 +32,8 @@ const closeModal = (product) => {
 
       <ProductModal product={product} closeModal={closeModal}/>
       </div>
+
+      </Bounce>
 
    
   )
