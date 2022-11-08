@@ -1,8 +1,10 @@
 import React from 'react'
 import '../../css/Filter/Filter.css'
+import Flip from 'react-reveal'
  function Filter(props) {
   return (
-    <div className='filter-wrapper'>
+<Flip left>
+<div className='filter-wrapper'>
         <h2 className='filter-title'> Filter </h2>
         <div className='num-of-product'>Number of product {props.ProductNumber}</div>
         <div className='filter-by-size'>
@@ -27,6 +29,8 @@ import '../../css/Filter/Filter.css'
         </div>
 
     </div>
-  )
+
+</Flip>
+    )
 }
 export default Filter;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../../css/Cart/Cart.css'
 import Checkout from '../CheckoutForm/Checkout';
+import Bounce from 'react-reveal'
 
  function Cart(props) {
 
@@ -27,25 +28,28 @@ import Checkout from '../CheckoutForm/Checkout';
 
   return (
     <div className='cart-wrapper'>
-            <div className='cart-title'> {props.cartitems.length === 0 ? 'Cart Empty' : <p>There is {props.cartitems.length} Product in Cart</p>} </div>
-            <div className='cart-items'> 
-                {props.cartitems.map(item => (
-                <div className='cart-item' key={item.id}>
-                    <img src={item.imageurl} alt=""  /> 
-                    <div className='cart-info'>
-                        <div>
-                            <p>Title: {item.title}</p>  
-                            <p>Qty: {item.qty} </p>    
-                            <p>Price: ${item.price}</p>      
-                        </div>
-                        <button onClick={() => props.RemoveCart(item)}>
-                            Remove
-                        </button>    
-                    </div>   
-                </div> 
+`                <div className='cart-title'> {props.cartitems.length === 0 ? 'Cart Empty' : <p>There is {props.cartitems.length} Product in Cart</p>} </div>
+                <Bounce bottom cascade>
+                <div className='cart-items'> 
+                    {props.cartitems.map(item => (
+                    <div className='cart-item' key={item.id}>
+                        <img src={item.imageurl} alt=""  /> 
+                        <div className='cart-info'>
+                            <div>
+                                <p>Title: {item.title}</p>  
+                                <p>Qty: {item.qty} </p>    
+                                <p>Price: ${item.price}</p>      
+                            </div>
+                            <button onClick={() => props.RemoveCart(item)}>
+                                Remove
+                            </button>    
+                        </div>   
+                    </div> 
 
-                ))}
-            </div>
+                    ))}
+                </div>
+                </Bounce>
+`
                      {
                         props.cartitems.length !== 0 && 
                         (   
@@ -62,7 +66,6 @@ import Checkout from '../CheckoutForm/Checkout';
                        setShowForm={setShowForm} 
                        handleChange={handleChange}  
                        submitOrder={submitOrder}/>
-
     </div>
   )
 }
