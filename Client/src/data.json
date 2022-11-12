@@ -27,6 +27,24 @@
     },
 
     {
+        "id": "5",
+        "title": "IPAD",
+        "imageurl": "/images/product5.jpg",
+        "dest": "This is Product 5",
+        "price": 85,
+        "sizes": ["S","XS"]
+    },
+
+    {
+        "id": "6",
+        "title": "IPAD",
+        "imageurl": "/images/product5.jpg",
+        "dest": "This is Product 6",
+        "price": 500,
+        "sizes": ["S","XS"]
+    },
+
+    {
         "id": "4",
         "title": "Tab",
         "imageurl": "/images/product4.jpg",

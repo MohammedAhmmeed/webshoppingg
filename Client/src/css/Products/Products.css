@@ -20,7 +20,7 @@
   margin: 20px, 0;
 }
 .products-wrapper .product-item button {
-  display: block;
+  display: flex;
   width: 100%;
   border: 0;
   background: #2a5ea5;
