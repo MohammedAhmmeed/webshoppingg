@@ -4,6 +4,8 @@ import Filter from "./Components/Filter/Filter";
 import Footer from "./Components/Footer/Footer";
 import Headar from "./Components/headar/Headar";
 import Products from "./Components/Products/Products";
+import {Provider} from 'react-redux'
+import store from "./store/store";
 import data from "./data.json"
 import './index.css'
 
@@ -72,7 +74,8 @@ useEffect(() => {
     setCartItems(cartItemsClone.filter(p => p.id != product.id))
   }
   return (
-    <div className="layout">
+    <Provider store={store}>
+      <div className="layout">
 
 <Headar /> 
  <main>
@@ -93,6 +96,7 @@ useEffect(() => {
 <Footer />
 
     </div>
+    </Provider>
   );
 }
 
