@@ -80,7 +80,7 @@ useEffect(() => {
 <Headar /> 
  <main>
   <div className="wrapper" >
-  <Products products={products} AddToCart={AddToCart}/>
+  <Products  AddToCart={AddToCart}/>
    <Filter 
    ProductNumber={products.length}
    handleFilterBySize={handleFilterBySize} 
