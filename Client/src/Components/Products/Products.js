@@ -3,7 +3,7 @@ import "../../css/Products/Products.css"
 import ProductModal from './ProductModal';
 import Bounce from 'react-reveal'
 import {connect} from 'react-redux'
-import { fetchProducts } from '../../store/actions/producs';
+import { fetchProducts } from '../../store/actions/products';
 
  function Products(props) {
   const [product, setproduct] = useState(""); 
@@ -48,6 +48,6 @@ useEffect( () => {
 
 export default connect( (state) => {
   return {
-      products: state.products.products 
+      products: state.products.filterProducts 
   }
 } , {fetchProducts} ) (Products)
