@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import '../../css/Cart/Cart.css'
 import Checkout from '../CheckoutForm/Checkout';
 import Bounce from 'react-reveal'
+import Model from 'react-modal'
 import {connect} from 'react-redux'
 import { removecart } from '../../store/actions/cart';
 
  function Cart(props) {
 
     const [ showform , setShowForm ] = useState(false);
+    const [order , setOrder]  = useState(false);
     const [ value , setvalue ] = useState("");
 
 
@@ -19,8 +21,11 @@ import { removecart } from '../../store/actions/cart';
             email : value.email
         }
 
-        console.log(order);
+        setOrder(order);
+    }
 
+    const colseModal = () => {
+        setOrder(false);
     }
 
     const handleChange = (e) => {
@@ -31,6 +36,46 @@ import { removecart } from '../../store/actions/cart';
   return (
     <div className='cart-wrapper'>
 `                <div className='cart-title'> {props.cartItems.length === 0 ? 'Cart Empty' : <p>There is {props.cartItems.length} Product in Cart</p>} </div>
+                
+                <Model isOpen={order} onRequestClose={colseModal}>
+                    <div className='order-info'>
+                        <span className='close-icon' onClick={colseModal}>&times;</span>
+                        <p className='alert-success'>Order Done Successfully</p>
+                        <table>
+                            <tr>
+                                <td>Name :</td>
+                                <td>{order.name}</td>
+
+                            </tr>
+                            <tr>
+                                <td>E-mail :</td>
+                                <td>{order.email}</td>
+
+                            </tr>
+                            <tr>
+                                <td>Total :</td>
+                                <td>{props.cartItems.reduce((a, p) => {
+                                    return a+ p.price * p.qty
+                                }, 0)}</td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                Selected Items:
+                                </td>
+                                <td>{props.cartItems.map (p => (
+                                    <div className='cartdata'> 
+                                        <p>Number of this Products: {p.qty}</p>
+                                        <p>Title of Products: {p.title}</p>
+
+                                    </div>
+                                ))}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </Model>
+                
+                
                 <Bounce bottom cascade>
                 <div className='cart-items'> 
                     {props.cartItems.map(item => (
