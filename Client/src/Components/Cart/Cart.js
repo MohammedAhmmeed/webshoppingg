@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import '../../css/Cart/Cart.css'
 import Checkout from '../CheckoutForm/Checkout';
 import Bounce from 'react-reveal'
+import {connect} from 'react-redux'
+import { removecart } from '../../store/actions/cart';
 
  function Cart(props) {
 
@@ -28,10 +30,10 @@ import Bounce from 'react-reveal'
 
   return (
     <div className='cart-wrapper'>
-`                <div className='cart-title'> {props.cartitems.length === 0 ? 'Cart Empty' : <p>There is {props.cartitems.length} Product in Cart</p>} </div>
+`                <div className='cart-title'> {props.cartItems.length === 0 ? 'Cart Empty' : <p>There is {props.cartItems.length} Product in Cart</p>} </div>
                 <Bounce bottom cascade>
                 <div className='cart-items'> 
-                    {props.cartitems.map(item => (
+                    {props.cartItems.map(item => (
                     <div className='cart-item' key={item.id}>
                         <img src={item.imageurl} alt=""  /> 
                         <div className='cart-info'>
@@ -40,7 +42,7 @@ import Bounce from 'react-reveal'
                                 <p>Qty: {item.qty} </p>    
                                 <p>Price: ${item.price}</p>      
                             </div>
-                            <button onClick={() => props.RemoveCart(item)}>
+                            <button onClick={() => props.removecart(item)}>
                                 Remove
                             </button>    
                         </div>   
@@ -51,10 +53,10 @@ import Bounce from 'react-reveal'
                 </Bounce>
 `
                      {
-                        props.cartitems.length !== 0 && 
+                        props.cartItems.length !== 0 && 
                         (   
                         <div  className='cartfooter'>
-                            <div className='total' >Total Price : ${props.cartitems.reduce ((acc, p) => {
+                            <div className='total' >Total Price : ${props.cartItems.reduce ((acc, p) => {
                             return acc + p.price * p.qty
                             } , 0)}</div>
                             <button onClick={() => setShowForm(true)}>Select Product</button>
@@ -69,4 +71,9 @@ import Bounce from 'react-reveal'
     </div>
   )
 }
-export default Cart
+export default connect((state) => {
+    return {
+        cartItems: state.cart.cartItems
+
+    }
+},{removecart}) (Cart)
