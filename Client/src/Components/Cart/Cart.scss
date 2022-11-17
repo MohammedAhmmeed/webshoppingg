@@ -52,3 +52,42 @@
         border-radius: 6px;
     }
 
+    .order-info {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .alert-success{
+            background-color: #22885c;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            text-transform: capitalize;
+            margin-bottom: 10px;
+        }
+        .close-icon {
+            position: absolute;
+            right: 3px;
+            top: 3px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        
+        table{
+            border: 1px solid #22885c;
+            tr{
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid #c0c0c0;
+
+                &:last-of-type {
+                    border-bottom: 0;
+                }
+                td{
+                    padding: 10px;
+
+                }
+            }
+        }
+    }
