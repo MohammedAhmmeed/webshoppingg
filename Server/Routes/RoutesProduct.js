@@ -2,7 +2,7 @@ const express = require('express');
 const Product = require('../models/ProductModel')
 const router = express.Router();
 
-
+// Product Api
 router.get('/api/products', async (req,res) => {
     const products = await Product.find();
     res.send(products)
@@ -19,5 +19,7 @@ router.delete('/api/products/:id', async (req,res) => {
     const deletedProduct = await Product.findByIdAndDelete(req.params.id);
     res.send(deletedProduct)
 })
+
+
 
 module.exports = router;
