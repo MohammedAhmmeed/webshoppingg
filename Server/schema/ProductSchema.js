@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const ProductScheam =  new mongoose.Schema( 
+const ProductSchema =  new mongoose.Schema( 
     {
         id: String,
         title: String,
@@ -11,4 +11,4 @@ const ProductScheam =  new mongoose.Schema(
         sizes: [String]
     })
 
-module.exports = ProductScheam
+module.exports = ProductSchema

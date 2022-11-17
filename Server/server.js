@@ -1,20 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const router = require('./Routes/routes');
+const ProductRouter = require('./Routes/RoutesProduct');
+const OrderRouter = require('./Routes/RoutesOrder');
+const runDB = require('./Config/db');
+
 
 const app = express();
 app.use(bodyParser.json());
-app.use('/', router);
+app.use('/', ProductRouter);
+app.use('/', OrderRouter);
 
-const connectionString = "mongodb://localhost/react-cart";
-mongoose.connect(connectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-.then(res=> console.log("connection Done"))
-.catch(err => console.log(err))
-
+// Run DB
+runDB();
 
 app.listen(5001 , () => {
     console.log("Running in port 5001");
